@@ -24,7 +24,7 @@ public:
 	 * \param control Le point de contrôle de la courbe de Bézier
 	 * \param arrive  Le point à l’extrémité de la courbe .
 	 */
-	Glyphe(Point& begin,Point& control,Point& arrive);
+	Glyphe(Point& begin,Point& control,Point& end);
 
 	/**
 	 * \brief Destructeur de la classe Glyphe
@@ -36,15 +36,15 @@ public:
 	 *
 	 * \return Les trois points de contrôles
 	 */
-	const Point* getPoints() const{
+	Point* get_points() const{
 		return points;
 	}
 
 	/**
-	 * \brief Teste si le point de contrôle est une extrémité
-	 * \details vérifie si les distances entres les 3 points consécutifs est petite.
+	 * \brief verifie si les points se rapprochent 
+	 * \details vérifie si les distances entres 2 points consécutifs est suffisament petite.
 	 */
-	int test();
+	int dist();
 
 };
 
